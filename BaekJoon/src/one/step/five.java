@@ -1,0 +1,16 @@
+package one.step;
+
+import java.util.Scanner;
+
+public class five {
+
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		int A = scan.nextInt();
+		int B = scan.nextInt();
+		if(A > 0 && B <10) {
+			System.out.println(A+B);
+		}
+	}
+
+}
