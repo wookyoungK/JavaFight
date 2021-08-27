@@ -1,4 +1,4 @@
-package one.step;
+package one.ten;
 //두 수를 입력받고 합을 출력하는 문제
 import java.util.Scanner;
 
@@ -9,9 +9,12 @@ public class Ten {
 		int A = scan.nextInt();
 		int B = scan.nextInt();
 		int C = scan.nextInt();
-		if(2 <= A && B && C <=10) {
-			System.out.println((double)A/B);
-		}
+		scan.close();
+		 
+		System.out.println( (A+B)%C );
+		System.out.println( (A%C + B%C)%C );
+		System.out.println( (A*B)%C );
+		System.out.println( (A%C * B%C)%C );
 	}
 
 }
