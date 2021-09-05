@@ -2,7 +2,7 @@ package one;
 //두 수를 입력받고 합을 출력하는 문제
 import java.util.Scanner;
 
-public class five {
+public class Five {
 
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
