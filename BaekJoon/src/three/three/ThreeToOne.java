@@ -7,7 +7,7 @@ import java.io.InputStreamReader;
 public class ThreeToOne {
 
 	public static void main(String[] args) throws IOException {
-
+ 
 		BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
 		int A = Integer.parseInt(bf.readLine());
 		int total = 0;
