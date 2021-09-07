@@ -11,7 +11,6 @@ public class One {
 		int A = sc.nextInt();
 		int B = sc.nextInt();
 		
-		int arr [] = new arr[3];
 		while(true) {
 			
 		}
