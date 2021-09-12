@@ -18,8 +18,12 @@ public class Ten {
 		
 		
 		for(int i=0; i<T; i++) {
-			for(int j=0; j<=i; j++) {
-				bw.write("*");
+			for(int j=T; j>0; j--) {
+				if(i>=j-1) {
+					bw.write("*");
+				}else {					
+					bw.write("|");
+				}
 			}
 			bw.write("\n");
 		}
