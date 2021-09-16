@@ -11,24 +11,16 @@ public class Three {
 	public static void main(String[] args) throws IOException {
 
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		StringBuilder sb = new StringBuilder();
-		StringTokenizer st;
-		String str;
 		int N = Integer.parseInt(br.readLine());
+		int cnt = 0;
+		int copy = N;
+
+		do {
+			N = (((N % 10) * 10) + ((N / 10) + (N % 10)) % 10);
+			cnt++;
+		} while (copy != N);
 		
-		if(N>10) {
-			
-		}
-
-//		while ((str = br.readLine()) != null) {
-//			st = new StringTokenizer(str, " ");
-//
-//			int X = Integer.parseInt(st.nextToken());
-//			sb.append(N + X).append("\n");
-//		}
-//		
-//		System.out.println(sb);
-
+		System.out.println(cnt);
 	}
 
 }
