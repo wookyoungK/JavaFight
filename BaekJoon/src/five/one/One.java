@@ -11,12 +11,13 @@ public class One {
 	public static void main(String[] args) throws IOException {
 
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		StringTokenizer st = new StringTokenizer(br.readLine()," ");
+
 		
 		int max = -1000001;
 		int min = 1000001;
 		
 		Integer.parseInt(br.readLine());
+		StringTokenizer st = new StringTokenizer(br.readLine()," ");
 		
 		while(st.hasMoreTokens()) {
 			int val = Integer.parseInt(st.nextToken());
