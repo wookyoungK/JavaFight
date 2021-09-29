@@ -30,7 +30,7 @@ public class Seven {
 			double cnt =0;
 			
 			
-			for(int k=0; k<N; N++) {
+			for(int k=0; k<N;k++) {
 				if(arr[k] > avg) {
 					cnt++;
 				}
