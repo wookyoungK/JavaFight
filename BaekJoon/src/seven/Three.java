@@ -7,18 +7,29 @@ import java.io.InputStreamReader;
 public class Three {
 
 	public static void main(String[] args) throws NumberFormatException, IOException {
-	BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
-	int A = Integer.parseInt(bf.readLine());
-	String B = bf.readLine();
-	int sum = 0;
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		 
+		int[] arr = new int[26];
+		
+		for(int i = 0; i < arr.length; i++) {
+			arr[i] = -1;
+		}
+ 
+		String S = br.readLine();
+ 
+		for(int i = 0; i < S.length(); i++) {
+			char ch = S.charAt(i);
+    
+			if(arr[ch - 'a'] == -1) {	// arr 원소 값이 -1 인 경우에만 초기화
+				arr[ch - 'a'] = i;
+			}
+		}
+ 
+		for(int val : arr) {	// 배열 출력
+			System.out.print(val + " ");
+		}
 	
-	for(int i=0; i<A; i++) {
-		sum += (B.charAt(i) - '0');
-			
-	}
-	System.out.println(sum);
-		
-		
+
 	}
 
 }
