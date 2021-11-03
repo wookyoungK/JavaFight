@@ -13,7 +13,7 @@ public class NineToOne {
 		StringBuilder sb = new StringBuilder();
 		
 		int T = Integer.parseInt(br.readLine());	// 테스트 케이스 
-		
+		 
 		for(int i = 0; i < T; i++) {
 			
 			StringTokenizer st = new StringTokenizer(br.readLine()," ");
