@@ -21,33 +21,48 @@ public class Two {
 
     // 분수의 덧셈
     public int[] fountainPlus(int numer1, int denom1, int numer2, int denom2) {
-        int[] answer = {1,2};
-        int lcm = 0;
-        int gcd = 0;
-        if (0 < denom1 && 0 < denom2 && 0 < numer1 && 0 < numer2) {
-            int temp = 0;
-            int a = denom1;
-            int b = denom2;
-
-            while (a % b != 0) {
-                temp = a % b;
-                System.out.println("tmp = "+ temp);
-                a = b;
-                b = temp;
-            }
-            if(denom1 % denom2 == 0){
-                gcd = denom2;
-                lcm = denom1;
-            }else{
-                gcd = temp;
-                lcm = (denom1*denom2) / gcd;
-            }
-
-            System.out.println("gdc = " + gcd);
-            System.out.println("lcm  = " + lcm);
-        }
-
+        int n = numer1 * numer2;
+        int den = (denom1 * numer2) + (denom2 * numer1);
+        int g = gcd(den, n);
+        int[] answer = {den / g, n / g};
         return answer;
+/*         
+        //방법 1
+        // 분자
+        int topNum = numer1 * denom2 + numer2 * denom1 ;
+
+        // 분모
+        int botNum = denom1 * denom2;
+        
+        // 최소 공배수
+        int maximum = 1;
+
+        // 약분
+        for(int i = 1 ; i <= topNum ; i ++) {
+            if(topNum%i == 0 && botNum%i == 0) {
+                maximum = i;
+            }
+        }
+        int[] answer = {topNum/maximum, botNum/maximum};
+
+        return answer; 
+*/
+    }
+
+    public int gcd(int a, int b) {
+        //유클리드 호제법
+        if (a < b) {
+            int temp = a;
+            a = b;
+            b = temp;
+        }
+        while (b > 1) {
+            int r = a % b;
+            if (r == 0) break;
+            a = b;
+            b = r;
+        }
+        return b;
     }
 
     //배열 두배 만들기
