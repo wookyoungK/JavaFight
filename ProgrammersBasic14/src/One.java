@@ -14,6 +14,7 @@ public class One {
         System.out.println("몫 구하기 = " + sol.quotient(sc1, sc2));
         System.out.println("두 수의 나눗셈 = " + sol.divide(sc1, sc2));
         System.out.println("숫자 비교하기 = "+ sol.compare(sc1,sc2));
+        System.out.println("나머지 구하기 = "+ sol.remain(sc1,sc2));
         sc.close();
     }
     // 두 수의 합
@@ -78,6 +79,15 @@ public class One {
             }else{
                 answer = -1;
             }
+        }
+        return answer;
+    }
+    // 나머지 구하기
+    public int remain(int num1, int num2) {
+        int answer = -1;
+        boolean number = (num1 >= 0 && num1 <= 100 && num2 >= 0 && num2 <= 100);
+        if (number) {
+            answer = num1%num2;
         }
         return answer;
     }
