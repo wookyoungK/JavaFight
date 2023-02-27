@@ -13,6 +13,7 @@ public class Three {
         System.out.println("중앙값 구하기 = "+sol.middle(middleArr));
         System.out.println("최빈값 구하기= "+ sol.mode(modeArr));
         System.out.println("홀수 정렬 = "+ sol.oddnum(n));
+        System.out.println("평균값 구하기 = "+ sol.avg(middleArr));
     }
 
     //중앙값 구하기
@@ -84,6 +85,19 @@ public class Three {
                 eventNumber++;
             }
         }
+        return answer;
+    }
+
+    //평균값 구하기
+    public double avg (int [] numbers){
+        double answer = 0;
+        for(int i=0; i<numbers.length; i++){
+            answer += numbers[i];
+        }
+        answer =answer/numbers.length;
+
+        // arrays.stream을 많이 쓴다
+        // return Arrays.stream(numbers).average().orElse(0);
         return answer;
     }
     
