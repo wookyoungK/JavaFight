@@ -5,7 +5,9 @@ public class Five {
         Scanner sc = new Scanner(System.in);
         Five sol = new Five();
         String st = "hello";
+        int num = 51;
         System.out.println("문자 반복 출력 = "+sol.st(st,3));
+        System.out.println("숫자 -> 문자 출력 = "+sol.alien(51));
     }
 
     //문자 반복 출력
@@ -23,6 +25,18 @@ public class Five {
         // }
         return sb.toString();
 
+    }
+    public String alien (int age) {
+        String answer = "";
+        String temp = Integer.toString(age);
+
+        for(int i = 0; i<temp.length(); i++){
+            System.out.println(temp.charAt(i));
+            answer += (char)(temp.charAt(i)+49);
+        }
+
+
+        return answer;
     }
 
 }
