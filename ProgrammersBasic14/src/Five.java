@@ -1,3 +1,4 @@
+import java.math.BigInteger;
 import java.util.*;
 import java.util.stream.IntStream;
 
@@ -15,6 +16,7 @@ public class Five {
         System.out.println("숫자 -> 문자 출력 = "+sol.alien(51));
         System.out.println("진료 순서 = "+sol.emergency(arr));
         System.out.println("모스 부호 = "+sol.mos(s));
+        System.out.println("서로다른구슬 = "+sol.combination(5).divide(sol.combination(2).multiply(sol.combination(3))));
     }
 
     //문자 반복 출력
@@ -72,5 +74,14 @@ public class Five {
             answer += (char) (Arrays.asList(str).indexOf(stArr[i])+97);
         }
         return answer;
+    }
+
+    public BigInteger combination(int num){
+        BigInteger result = BigInteger.valueOf(1);
+        for(int i = 1; i <= num; i++) {
+            result = result.multiply(BigInteger.valueOf(i));
+        }
+
+        return result;
     }
 }
