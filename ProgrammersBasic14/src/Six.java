@@ -8,6 +8,7 @@ public class Six {
 
         System.out.println("문자열 정렬 = " + sol.st(str));
         System.out.println("컨트롤제트 = " + sol.control("10 Z 20 Z 1"));
+        System.out.println("소인수분해 = "+sol.factorization(420));
         System.out.println("369 = " + sol.game(2312723));
     }
 
@@ -49,6 +50,18 @@ public class Six {
         return answer;
     }
 
+    //소인수분해
+    public int [] factorization ( int num){
+        HashSet<Integer> set = new HashSet<>();
+        int n = 420;
+        for (int i = 2; i <= n; i++) {
+            while (n % i == 0) {
+                set.add(i);
+                n /= i;
+            }
+        }
+        return set.stream().sorted().mapToInt(Integer::intValue).toArray();
+    }
     // 369
     public int game(int order) {
         int answer = 0;
