@@ -2,7 +2,7 @@ import java.math.BigDecimal;
 import java.util.Scanner;
 
 public class One {
-    
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         One sol = new One();
@@ -13,10 +13,11 @@ public class One {
         System.out.println("두 수의 곱 = " + sol.multiple(sc1, sc2));
         System.out.println("몫 구하기 = " + sol.quotient(sc1, sc2));
         System.out.println("두 수의 나눗셈 = " + sol.divide(sc1, sc2));
-        System.out.println("숫자 비교하기 = "+ sol.compare(sc1,sc2));
-        System.out.println("나머지 구하기 = "+ sol.remain(sc1,sc2));
+        System.out.println("숫자 비교하기 = " + sol.compare(sc1, sc2));
+        System.out.println("나머지 구하기 = " + sol.remain(sc1, sc2));
         sc.close();
     }
+
     // 두 수의 합
     public int plus(int num1, int num2) {
         int answer = -1;
@@ -37,7 +38,7 @@ public class One {
         return answer;
     }
 
-    //두 수의 곱
+    // 두 수의 곱
     public int multiple(int num1, int num2) {
         int answer = 0;
         boolean number = (num1 >= 0 && num1 <= 100 && num2 >= 0 && num2 <= 100);
@@ -52,42 +53,43 @@ public class One {
         int answer = 0;
         boolean number = (num1 >= 0 && num1 <= 100 && num2 >= 0 && num2 <= 100);
         if (number) {
-            answer = num1/num2;
+            answer = num1 / num2;
         }
         return answer;
     }
 
-    //두 수의 나눗셈
+    // 두 수의 나눗셈
     public int divide(int num1, int num2) {
         int answer = 0;
         boolean number = (num1 >= 0 && num1 <= 100 && num2 >= 0 && num2 <= 100);
         if (number) {
-            double decimal = ((num1*1.0) / num2) * 1000 ;
+            double decimal = ((num1 * 1.0) / num2) * 1000;
             answer = (int) decimal;
 
         }
         return answer;
     }
 
-    //숫자 비교하기
+    // 숫자 비교하기
     public int compare(int num1, int num2) {
         int answer = 0;
         boolean number = (num1 >= 0 && num1 <= 10000 && num2 >= 0 && num2 <= 10000);
         if (number) {
-            if(num1 == num2){
+            if (num1 == num2) {
                 answer = 1;
-            }else{
+            } else {
                 answer = -1;
             }
         }
         return answer;
     }
+
     // 나머지 구하기
     public int remain(int num1, int num2) {
         int answer = -1;
         boolean number = (num1 >= 0 && num1 <= 100 && num2 >= 0 && num2 <= 100);
         if (number) {
-            answer = num1%num2;
+            answer = num1 % num2;
         }
         return answer;
     }
