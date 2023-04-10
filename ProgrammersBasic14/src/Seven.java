@@ -10,6 +10,7 @@ public class Seven {
         System.out.println("가장 큰 수 = " + sol.big(arr));
         System.out.println("배열 비교 = " + sol.compare());
         System.out.println("자릿수 합 = " + sol.sum());
+        System.out.println("캐릭터의 좌표 = " + sol.coordinate());
     }
 
     // 암호해독
@@ -64,5 +65,38 @@ public class Seven {
     public int sum() {
         int n  =213213;
         return Arrays.stream(String.valueOf(n).split("")).mapToInt(Integer::parseInt).sum();
+    }
+
+    // 캐릭터의 좌표
+    public int [] coordinate() {
+        //좌표 끝에 도착했을 때 -> 반대쪽으로 4번 갈 수 있음 최대 2번이 아니다 이 경우를 생각해야 함
+        String [] keyinput = {"right", "right", "right", "right", "left", "left", "left", "left"};
+        int [] board = {5, 5};
+        int xCnt = 0;
+        int yCnt = 0;
+        final int leftCoord = -board[0] / 2;
+        final int rightCoord = board[0] / 2;
+        final int downCoord = -board[1] / 2;
+        final int upCoord = board[1] / 2;
+
+        for (int i = 0; i < keyinput.length; i++) {
+            switch (keyinput[i]) {
+                case "down":
+                    if (yCnt > downCoord) yCnt -= 1;
+                    break;
+                case "up":
+                    if (yCnt < upCoord) yCnt += 1;
+                    break;
+                case "left":
+                    if (xCnt > leftCoord) xCnt -= 1;
+                    break;
+                case "right":
+                    if (xCnt < rightCoord) xCnt += 1;
+                    break;
+            }
+        }
+
+        int[] answer = { xCnt, yCnt };
+        return answer;
     }
 }
