@@ -49,7 +49,7 @@ public class Two {
          */
     }
 
-    public int gcd(int a, int b) {
+    private int gcd(int a, int b) {
         // 유클리드 호제법
         if (a < b) {
             int temp = a;
