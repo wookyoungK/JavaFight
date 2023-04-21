@@ -9,6 +9,7 @@ public class Eight {
         System.out.println("유한소수 판별하기 = " + sol.decimal());
         System.out.println("정규표현식 문자열 찾기 = " + sol.reg());
         System.out.println("특이한 정렬 = " + sol.sort());
+        System.out.println("겹치는 선분의 길이 = " + sol.lines());
     }
 
     // 안전 지대
@@ -142,5 +143,19 @@ public class Eight {
          * Collections.reverse(nums);
          */
         return nums.stream().mapToInt(i -> i).toArray();
+    }
+
+    private static int lines() {
+        //선분이 점으로 주어질 때
+        int[][] lines = { { 0, 1 }, { 2, 5 }, { 3, 9 } };
+        int answer = 0;
+        int[] arr = new int[200];
+        for (int[] line : lines) {
+            for (int j = (line[0] + 100); j < (line[1] + 100); j++) {
+                arr[j]++;
+            }
+        }
+        answer = (int) Arrays.stream(arr).filter(i -> i >= 2).count();
+        return answer;
     }
 }
