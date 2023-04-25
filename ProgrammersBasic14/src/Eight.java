@@ -8,6 +8,7 @@ public class Eight {
         System.out.println("안전 지대 = " + sol.safety());
         System.out.println("유한소수 판별하기 = " + sol.decimal());
         System.out.println("정규표현식 문자열 찾기 = " + sol.reg());
+        System.out.println("치킨 쿠폰 = " + sol.coupon());
     }
 
     // 안전 지대
@@ -108,5 +109,16 @@ public class Eight {
         }
         //result 3
         return answer;
+    }
+    private static int coupon(){
+            int coupon = 1999;
+            int count = 0;
+
+            while (coupon >= 10) {
+                int leftCoupon = coupon % 10;
+                count += coupon / 10;
+                coupon = leftCoupon + coupon / 10;
+            }
+            return count;
     }
 }
