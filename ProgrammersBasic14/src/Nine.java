@@ -2,6 +2,7 @@ public class Nine {
     public static void main(String[] args) {
         Nine sol = new Nine();
         System.out.println("k의 개수 = " + sol.numCount());
+        System.out.println("다음에 올 숫자 = " + sol.sequence());
     }
 
     //k의 개수
@@ -28,6 +29,25 @@ public class Nine {
                 tmp /= 10;
             }
         }
+        return answer;
+    }
+
+    //다음에 올 숫자
+    public int sequence() {
+        //등비수열 or 등차수열
+        int[] common = {1, 2, 3, 4};
+//        int[] common = {2,4,8};
+        int answer = 0;
+
+        int x = common[1] - common[0];
+        int y = common[2] - common[1];
+
+        if (x == y) {
+            answer = common[common.length - 1] + y;
+        } else {
+            answer = common[common.length - 1] * common[2] / common[1];
+        }
+
         return answer;
     }
 }
