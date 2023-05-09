@@ -27,16 +27,17 @@ public class LevelOne {
             answer = set.size();
         return answer;
     }
-    private String marathon(){
+
+    private String marathon() {
         String answer = "";
-        String[] participant = {"mislav", "stanko", "mislav", "ana"};
-        String[] completion = {"stanko", "ana", "mislav"};
+        String[] participant = { "mislav", "stanko", "mislav", "ana" };
+        String[] completion = { "stanko", "ana", "mislav" };
         Map<String, Integer> hm = new HashMap<>();
 
         for (String part : participant) {
             if (hm.get(part) == null) {
                 hm.put(part, 1);
-            }  else {
+            } else {
                 hm.put(part, hm.get(part) + 1);
             }
         }
