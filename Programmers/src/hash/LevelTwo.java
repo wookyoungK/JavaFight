@@ -1,3 +1,5 @@
+package hash;
+
 import java.util.*;
 
 public class LevelTwo {
@@ -42,6 +44,7 @@ public class LevelTwo {
         return answer;
     }
 
+    //의상
     private int clothes() {
         String[][] clothes = { { "yellow_hat", "headgear" }, { "blue_sunglasses", "eyewear" },
                 { "green_turban", "headgear" } };

@@ -1,3 +1,5 @@
+package hash;
+
 import java.util.*;
 
 public class LevelOne {
@@ -7,6 +9,7 @@ public class LevelOne {
         System.out.println("완주하지 못한 선수 : " + lv1.marathon());
     }
 
+    // 폰켓몬
     private int pokemon() {
         int[] nums = { 3, 3, 3, 2, 2, 4 };
         int answer = 0;
@@ -28,6 +31,7 @@ public class LevelOne {
         return answer;
     }
 
+    // 완주하지 못한 선수
     private String marathon() {
         String answer = "";
         String[] participant = { "mislav", "stanko", "mislav", "ana" };
@@ -51,6 +55,5 @@ public class LevelOne {
                 answer = key;
         }
         return answer;
-
     }
 }
