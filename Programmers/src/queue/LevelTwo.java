@@ -6,6 +6,7 @@ public class LevelTwo {
     public static void main(String[] args) {
         LevelTwo lv2 = new LevelTwo();
         System.out.println("기능개발 : " + lv2.fd());
+        System.out.println("다리를 지나는 트럭 : " + lv2.bridge());
     }
     
     //기능개발
@@ -32,5 +33,33 @@ public class LevelTwo {
             answer[i] = arr.get(i);
         }
         return answer;
+    }
+
+    //다리를 지나는 트럭
+    private int bridge(){
+        int[] truck_weights = {7, 4, 5, 6};
+        int bridge_length = 2;
+        int weight = 10;
+
+        int answer = 0;
+        int index = 0;
+        int currentWeight = 0;
+
+        Queue<Integer> queue = new LinkedList<>();
+        for (int i = 0; i < bridge_length; i++) {
+            queue.offer(0);
+        }
+        while(index < truck_weights.length){
+            answer++;
+            currentWeight -= queue.poll();
+            if(currentWeight + truck_weights[index] <= weight){
+                queue.offer(truck_weights[index]);
+                currentWeight += truck_weights[index++];
+            } else{
+                queue.offer(0);
+            }
+
+        }
+        return answer + bridge_length;
     }
 }
