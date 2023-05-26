@@ -7,6 +7,7 @@ public class LevelTwo {
         LevelTwo lv2 = new LevelTwo();
         System.out.println("가장 큰 수 : " + lv2.bigNum());
         System.out.println("소수 찾기 : "+lv2.decimal("011"));
+        System.out.println("카펫 : "+lv2.capet(24,24));
     }
 
     // 가장 큰 수
@@ -86,4 +87,17 @@ public class LevelTwo {
         return count;
     }
 
+    //카펫
+    private int [] capet(int yellow , int brown){
+        int[] answer = new int[2];
+        for (int i = 1; i * i <= yellow; i++) {
+            if (yellow % i == 0) {
+                answer[0] = yellow / i + 2; 
+                answer[1] = i + 2;
+                if (answer[0] * answer[1] - i * yellow / i == brown)
+                    return answer;
+            }
+        }
+        return answer;
+    }
 }
